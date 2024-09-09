@@ -33,12 +33,12 @@ proyecto_titanic/
 
 1. Clona este repositorio:
    ```
-   [git clone https://github.com/tu-usuario/proyecto-titanic-api.git](https://github.com/GerardoMayel/proyecto_titanic)
+   [git clone https://github.com/GerardoMayel/proyecto_titanic
    ```
 
 2. Navega al directorio del proyecto:
    ```
-   cd proyecto-titanic-api
+   cd proyecto_titanic
    ```
 
 3. Instala las dependencias:
