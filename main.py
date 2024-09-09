@@ -2,6 +2,7 @@ from src.prepare_data import prepare_data
 from src.train_model import train_model
 from src.predict import load_model, predict
 from sklearn.metrics import accuracy_score, classification_report
+import joblib
 
 def main():
     # Preparar datos
@@ -9,6 +10,9 @@ def main():
     
     # Entrenar modelo
     model = train_model(X_train, y_train)
+    
+    # Guardar el modelo
+    joblib.dump(model, 'models/model.pkl')
     
     # Evaluar modelo
     y_pred = predict(model, X_test)

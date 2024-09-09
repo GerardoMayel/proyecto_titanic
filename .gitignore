@@ -8,6 +8,17 @@ venv/
 env/
 .env
 
+#Los ambientes que requiere la materia de la maestria
+env_analisis/
+env_api/
+
+# Notebooks de Jupyter
+.ipynb_checkpoints/
+
+# Archivos de sistema
+.DS_Store
+
+
 # Archivos de distribución / empaquetado
 *.egg
 *.egg-info/
