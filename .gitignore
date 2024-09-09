@@ -1,0 +1,68 @@
+# Archivos y carpetas específicos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+venv/
+env/
+.env
+
+# Archivos de distribución / empaquetado
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+.eggs/
+
+# Archivos de PyInstaller
+*.manifest
+*.spec
+
+# Logs y bases de datos
+*.log
+*.sql
+*.sqlite
+
+# Archivos específicos de IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.spyderproject
+.spyproject
+.ropeproject
+
+# Archivos específicos de Jupyter Notebook
+.ipynb_checkpoints
+
+# Archivos de datos y modelos (descomenta si no quieres trackear estos archivos)
+# *.csv
+# *.pkl
+# *.h5
+
+# Carpetas de resultados o outputs
+results/
+outputs/
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración local
+*.ini
+*.cfg
+
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
+*~.nib
