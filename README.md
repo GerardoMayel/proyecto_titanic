@@ -36,12 +36,14 @@ proyecto_titanic/
 ### Entorno de Análisis
 
 1. Crea y activa el entorno virtual:
+
    ```
    python3 -m venv env_analisis
    source env_analisis/bin/activate
    ```
 
 2. Instala las dependencias:
+
    ```
    pip install -r requirements_analisis.txt
    ```
@@ -54,12 +56,14 @@ proyecto_titanic/
 ### API
 
 1. Crea y activa el entorno virtual:
+
    ```
    python3 -m venv env_api
    source env_api/bin/activate
    ```
 
 2. Instala las dependencias:
+
    ```
    pip install -r requirements_api.txt
    ```
@@ -74,6 +78,7 @@ proyecto_titanic/
 Para ejecutar la API en un contenedor Docker:
 
 1. Construye la imagen:
+
    ```
    docker build -t titanic-api .
    ```
@@ -100,6 +105,15 @@ Envía una solicitud POST a `http://localhost:5000/predict` con los datos del pa
 ```
 
 La API devolverá una predicción de supervivencia (0 o 1).
+
+## Ejemplo de la respuesta:
+
+curl -X POST http://192.168.68.112:5000/predict \
+ -H "Content-Type: application/json" \
+ -d '{"Pclass": 3, "Sex": 0, "Age": 22, "SibSp": 1, "Parch": 0, "Fare": 7.25, "Embarked": 2}'
+{
+"prediction": 0
+}
 
 ## Contribuir
 
