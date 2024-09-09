@@ -2,7 +2,7 @@
 
 ## Descripción
 
-En esta clase vas a convertir un modelo predictivo en un API REST. Puedes usar cualquier modelo que hayas desarrollado en alguna otra materia. El desempeño del modelo no es criterio de evaluación de este proyecto. En este caso se selecciona el proyecto Titanic.
+Este proyecto convierte un modelo predictivo del Titanic en una API REST utilizando Flask.
 
 ## Estructura del Proyecto
 
@@ -16,7 +16,6 @@ proyecto_titanic/
 │       └── titanic_processed.csv
 │
 ├── src/
-│   ├── __init__.py
 │   ├── prepare_data.py
 │   ├── train_model.py
 │   └── predict.py
@@ -24,36 +23,83 @@ proyecto_titanic/
 ├── models/
 │   └── model.pkl
 │
+├── app.py
 ├── main.py
-├── requirements.txt
+├── Dockerfile
+├── requirements_analisis.txt
+├── requirements_api.txt
 └── README.md
 ```
 
-## Instalación
+## Instalación y Uso
 
-1. Clona este repositorio:
-   ```
-   [git clone https://github.com/GerardoMayel/proyecto_titanic
-   ```
+### Entorno de Análisis
 
-2. Navega al directorio del proyecto:
+1. Crea y activa el entorno virtual:
    ```
-   cd proyecto_titanic
+   python3 -m venv env_analisis
+   source env_analisis/bin/activate
    ```
 
-3. Instala las dependencias:
+2. Instala las dependencias:
    ```
-   pip install -r requirements.txt
+   pip install -r requirements_analisis.txt
    ```
 
-## Uso
-
-1. Asegúrate de que el archivo `titanic.csv` esté en la carpeta `data/raw/`.
-
-2. Ejecuta el script principal:
+3. Ejecuta el script principal para entrenar el modelo:
    ```
    python main.py
    ```
+
+### API
+
+1. Crea y activa el entorno virtual:
+   ```
+   python3 -m venv env_api
+   source env_api/bin/activate
+   ```
+
+2. Instala las dependencias:
+   ```
+   pip install -r requirements_api.txt
+   ```
+
+3. Ejecuta la API:
+   ```
+   python app.py
+   ```
+
+### Docker (opcional)
+
+Para ejecutar la API en un contenedor Docker:
+
+1. Construye la imagen:
+   ```
+   docker build -t titanic-api .
+   ```
+
+2. Ejecuta el contenedor:
+   ```
+   docker run -p 5000:5000 titanic-api
+   ```
+
+## Uso de la API
+
+Envía una solicitud POST a `http://localhost:5000/predict` con los datos del pasajero en formato JSON. Por ejemplo:
+
+```json
+{
+  "Pclass": 3,
+  "Sex": 0,
+  "Age": 22,
+  "SibSp": 1,
+  "Parch": 0,
+  "Fare": 7.25,
+  "Embarked": 2
+}
+```
+
+La API devolverá una predicción de supervivencia (0 o 1).
 
 ## Contribuir
 
